@@ -1,5 +1,6 @@
 import _curry2 from './internal/_curry2.js';
 import _path from './internal/_path.js';
+import paths from './paths.js';
 
 /**
  * Retrieves the value at a given path. The nodes of the path can be arbitrary strings or non-negative integers.
@@ -26,5 +27,9 @@ import _path from './internal/_path.js';
  *      R.path([-2], {'-2': 'a'}); //=> undefined
  */
 
-var path = _curry2(_path);
+export var path = _curry2(_path);
+
+export var path2 = _curry2(function path(pathAr, obj) {
+  return paths([pathAr], obj)[0];
+});
 export default path;
