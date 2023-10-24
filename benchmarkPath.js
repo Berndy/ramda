@@ -1,5 +1,6 @@
 import Benchmark from 'benchmark';
 import { path, path2 } from './source/path.js';
+import pathUncurried from './source/internal/_path.js';
 
 Benchmark.options.maxTime = 1;
 const suite = new Benchmark.Suite();
@@ -27,19 +28,26 @@ const obj = {
 };
 
 suite
-  .add('path old', function() {
+  .add('path old     ', function() {
     path2(pathAr1, obj);
     path2(pathAr2, obj);
     path2(pathAr3, obj);
     path2(pathAr4, obj);
     path2(pathAr5, obj);
   })
-  .add('path new', function() {
+  .add('path new     ', function() {
     path(pathAr1, obj);
     path(pathAr2, obj);
     path(pathAr3, obj);
     path(pathAr4, obj);
     path(pathAr5, obj);
+  })
+  .add('path internal', function() {
+    pathUncurried(pathAr1, obj);
+    pathUncurried(pathAr2, obj);
+    pathUncurried(pathAr3, obj);
+    pathUncurried(pathAr4, obj);
+    pathUncurried(pathAr5, obj);
   })
   .on('cycle', function(event) {
     console.log(String(event.target));

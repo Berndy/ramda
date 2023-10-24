@@ -3,8 +3,9 @@
 
 ## Results
 ```
-path old x 1,856,801 ops/sec ±3.81% (23 runs sampled)
-path new x 4,985,123 ops/sec ±2.02% (21 runs sampled)
+path old      x 2,060,753 ops/sec ±3.83% (22 runs sampled)
+path new      x 4,981,880 ops/sec ±0.92% (24 runs sampled)
+path internal x 8,866,690 ops/sec ±4.40% (23 runs sampled)
 ```
 
 ## Optimization steps
