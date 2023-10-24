@@ -1,5 +1,5 @@
 import _curry1 from './internal/_curry1.js';
-import _nth from './internal/nth.js';
+import _nth from './internal/_nth.js';
 import curryN from './curryN.js';
 
 
