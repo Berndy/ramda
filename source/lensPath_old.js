@@ -1,7 +1,6 @@
 import _curry1 from './internal/_curry1.js';
 import assocPath from './assocPath.js';
 import lens from './lens.js';
-import _path from './internal/_path.js';
 import path from './path.js';
 
 
