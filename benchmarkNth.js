@@ -8,22 +8,52 @@ const pathAr1 = ['a', 'b', 'c'];
 
 suite
   .add('nth old 0', function() {
-    _nth(pathAr1, 0);
+    _nth(0, pathAr1);
+    _nth(0, pathAr1);
+    _nth(0, pathAr1);
+    _nth(0, pathAr1);
+    _nth(0, pathAr1);
+    _nth(0, pathAr1);
   })
   .add('nth new 0', function() {
-    _nth2(pathAr1, 0);
+    _nth2(0, pathAr1);
+    _nth2(0, pathAr1);
+    _nth2(0, pathAr1);
+    _nth2(0, pathAr1);
+    _nth2(0, pathAr1);
+    _nth2(0, pathAr1);
   })
   .add('nth old 1', function() {
-    _nth(pathAr1, 1);
+    _nth(1, pathAr1);
+    _nth(1, pathAr1);
+    _nth(1, pathAr1);
+    _nth(1, pathAr1);
+    _nth(1, pathAr1);
+    _nth(1, pathAr1);
   })
   .add('nth new 1', function() {
-    _nth2(pathAr1, 1);
+    _nth2(1, pathAr1);
+    _nth2(1, pathAr1);
+    _nth2(1, pathAr1);
+    _nth2(1, pathAr1);
+    _nth2(1, pathAr1);
+    _nth2(1, pathAr1);
   })
   .add('nth old -1', function() {
-    _nth(pathAr1, -1);
+    _nth(-1, pathAr1);
+    _nth(-1, pathAr1);
+    _nth(-1, pathAr1);
+    _nth(-1, pathAr1);
+    _nth(-1, pathAr1);
+    _nth(-1, pathAr1);
   })
   .add('nth new -1', function() {
-    _nth2(pathAr1, -1);
+    _nth2(-1, pathAr1);
+    _nth2(-1, pathAr1);
+    _nth2(-1, pathAr1);
+    _nth2(-1, pathAr1);
+    _nth2(-1, pathAr1);
+    _nth2(-1, pathAr1);
   })
   .on('cycle', function(event) {
     console.log(String(event.target));

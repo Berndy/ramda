@@ -1,30 +1,37 @@
+# Nth
 ## Usage
 `bun run benchmarkNth.js`
 
 ## Results
 
 ```
-nth old 0 x 5,320,103 ops/sec ±2.26% (20 runs sampled)
-nth new 0 x 5,243,102 ops/sec ±2.57% (24 runs sampled)
-nth old 1 x 5,396,598 ops/sec ±2.96% (18 runs sampled)
-nth new 1 x 5,339,282 ops/sec ±1.24% (23 runs sampled)
-nth old -1 x 5,431,793 ops/sec ±1.04% (24 runs sampled)
-nth new -1 x 5,298,789 ops/sec ±2.09% (22 runs sampled)
-```
-
-Path with old Nth function
-```
-path old      x 2,152,120 ops/sec ±0.87% (23 runs sampled)
-path new      x 5,383,754 ops/sec ±2.52% (20 runs sampled)
-path internal x 11,017,936 ops/sec ±1.25% (21 runs sampled)
-```
-
-path with new Nth function
-```
-path old      x 2,203,569 ops/sec ±1.00% (23 runs sampled)
-path new      x 6,128,519 ops/sec ±2.51% (23 runs sampled)
-path internal x 14,423,742 ops/sec ±3.52% (22 runs sampled)
+nth old 0 x 43,213,419 ops/sec ±5.71% (23 runs sampled)
+nth new 0 x 26,711,312 ops/sec ±5.35% (20 runs sampled)
+nth old 1 x 42,951,693 ops/sec ±6.16% (22 runs sampled)
+nth new 1 x 26,652,017 ops/sec ±5.74% (22 runs sampled)
+nth old -1 x 40,707,893 ops/sec ±0.56% (21 runs sampled)
+nth new -1 x 24,465,761 ops/sec ±3.91% (21 runs sampled)
 ```
 
 ## Optimization steps
 I tried to avoid creating a var every time the function runs, instead only creating a const when necessary in the scope of the condition
+
+# Effects on path
+switch default export in ./source/internal/_nth.js and run
+`bun run benchmarkPath.js`
+
+## Results
+
+Path with old Nth function
+```
+path old      x 2,171,188 ops/sec ±1.04% (24 runs sampled)
+path new      x 5,352,858 ops/sec ±2.10% (22 runs sampled)
+path internal x 8,065,776 ops/sec ±0.52% (23 runs sampled)
+```
+
+path with new Nth function
+```
+path old      x 2,179,445 ops/sec ±0.81% (22 runs sampled)
+path new      x 6,395,729 ops/sec ±3.69% (23 runs sampled)
+path internal x 12,270,453 ops/sec ±2.42% (21 runs sampled)
+```
