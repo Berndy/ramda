@@ -1,6 +1,8 @@
 import Benchmark from 'benchmark';
-import { path, path2 } from './source/path.js';
-import pathUncurried from './source/internal/_path.js';
+import pathOld from './source/path_old.js';
+import pathNew from './source/path.js';
+import pathInternal from './source/internal/_path.js';
+import pathInternalAltNth from './source/internal/_path_alt_nth.js';
 
 Benchmark.options.maxTime = 1;
 const suite = new Benchmark.Suite();
@@ -29,25 +31,32 @@ const obj = {
 
 suite
   .add('path old     ', function() {
-    path2(pathAr1, obj);
-    path2(pathAr2, obj);
-    path2(pathAr3, obj);
-    path2(pathAr4, obj);
-    path2(pathAr5, obj);
+    pathNew(pathAr1, obj);
+    pathNew(pathAr2, obj);
+    pathNew(pathAr3, obj);
+    pathNew(pathAr4, obj);
+    pathNew(pathAr5, obj);
   })
   .add('path new     ', function() {
-    path(pathAr1, obj);
-    path(pathAr2, obj);
-    path(pathAr3, obj);
-    path(pathAr4, obj);
-    path(pathAr5, obj);
+    pathOld(pathAr1, obj);
+    pathOld(pathAr2, obj);
+    pathOld(pathAr3, obj);
+    pathOld(pathAr4, obj);
+    pathOld(pathAr5, obj);
   })
   .add('path internal', function() {
-    pathUncurried(pathAr1, obj);
-    pathUncurried(pathAr2, obj);
-    pathUncurried(pathAr3, obj);
-    pathUncurried(pathAr4, obj);
-    pathUncurried(pathAr5, obj);
+    pathInternal(pathAr1, obj);
+    pathInternal(pathAr2, obj);
+    pathInternal(pathAr3, obj);
+    pathInternal(pathAr4, obj);
+    pathInternal(pathAr5, obj);
+  })
+  .add('path internal alt nth', function() {
+    pathInternalAltNth(pathAr1, obj);
+    pathInternalAltNth(pathAr2, obj);
+    pathInternalAltNth(pathAr3, obj);
+    pathInternalAltNth(pathAr4, obj);
+    pathInternalAltNth(pathAr5, obj);
   })
   .on('cycle', function(event) {
     console.log(String(event.target));

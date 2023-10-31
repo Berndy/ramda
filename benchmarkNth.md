@@ -17,7 +17,7 @@ nth new -1 x 24,465,761 ops/sec ±3.91% (21 runs sampled)
 I tried to avoid creating a var every time the function runs, instead only creating a const when necessary in the scope of the condition
 
 # Effects on path
-switch default export in ./source/internal/_nth.js and run
+switch import in ./source/internal/_path.js between _nth.js and _nth_old.js and run
 `bun run benchmarkPath.js`
 
 ## Results

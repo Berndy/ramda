@@ -1,5 +1,4 @@
 import _curry2 from './internal/_curry2.js';
-import _path from './internal/_path.js';
 import paths from './paths.js';
 
 /**
@@ -27,5 +26,7 @@ import paths from './paths.js';
  *      R.path([-2], {'-2': 'a'}); //=> undefined
  */
 
-var path = _curry2(_path);
+var path = _curry2(function path(pathAr, obj) {
+  return paths([pathAr], obj)[0];
+});
 export default path;

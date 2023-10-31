@@ -31,9 +31,6 @@ import path from './path.js';
  */
 
 var lensPath = _curry1(function lensPath(p) {
-  return lens(
-    function(val) { return _path(p, val);},
-    assocPath(p)
-  );
+  return lens(path(p), assocPath(p));
 });
 export default lensPath;
