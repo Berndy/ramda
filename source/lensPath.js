@@ -36,7 +36,7 @@ export var lensPath = _curry1(function lensPath(p) {
 
 export var lensPath2 = _curry1(function lensPath(p) {
   return lens(
-    (val) => _path(p, val),
+    function(val) { return _path(p, val);},
     assocPath(p)
   );
 });
