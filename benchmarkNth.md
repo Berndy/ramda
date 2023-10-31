@@ -1,5 +1,5 @@
 ## Usage
-`bun run benchmarkPath.js`
+`bun run benchmarkNth.js`
 
 ## Results
 
