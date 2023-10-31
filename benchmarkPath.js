@@ -31,18 +31,18 @@ const obj = {
 
 suite
   .add('path old     ', function() {
-    pathNew(pathAr1, obj);
-    pathNew(pathAr2, obj);
-    pathNew(pathAr3, obj);
-    pathNew(pathAr4, obj);
-    pathNew(pathAr5, obj);
-  })
-  .add('path new     ', function() {
     pathOld(pathAr1, obj);
     pathOld(pathAr2, obj);
     pathOld(pathAr3, obj);
     pathOld(pathAr4, obj);
     pathOld(pathAr5, obj);
+  })
+  .add('path new     ', function() {
+    pathNew(pathAr1, obj);
+    pathNew(pathAr2, obj);
+    pathNew(pathAr3, obj);
+    pathNew(pathAr4, obj);
+    pathNew(pathAr5, obj);
   })
   .add('path internal', function() {
     pathInternal(pathAr1, obj);
