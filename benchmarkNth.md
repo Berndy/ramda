@@ -21,17 +21,13 @@ switch import in ./source/internal/_path.js between _nth.js and _nth_old.js and 
 `bun run benchmarkPath.js`
 
 ## Results
-
-Path with old Nth function
+Varying results from minor to about 100% performance gains, but seemingly always faster?
 ```
-path old      x 2,171,188 ops/sec ±1.04% (24 runs sampled)
-path new      x 5,352,858 ops/sec ±2.10% (22 runs sampled)
-path internal x 8,065,776 ops/sec ±0.52% (23 runs sampled)
+path         x 10,047,843 ops/sec ±6.63% (19 runs sampled)
+path alt nth x 11,808,051 ops/sec ±4.07% (23 runs sampled)
 ```
 
-path with new Nth function
 ```
-path old      x 2,179,445 ops/sec ±0.81% (22 runs sampled)
-path new      x 6,395,729 ops/sec ±3.69% (23 runs sampled)
-path internal x 12,270,453 ops/sec ±2.42% (21 runs sampled)
+path         x 9,025,663 ops/sec ±3.51% (23 runs sampled)
+path alt nth x 22,340,029 ops/sec ±3.89% (20 runs sampled)
 ```

@@ -2,7 +2,12 @@ import Benchmark from 'benchmark';
 import pathOld from './source/path_old.js';
 import pathNew from './source/path.js';
 import pathInternal from './source/internal/_path.js';
-import pathInternalAltNth from './source/internal/_path_alt_nth.js';
+import pathInternal2 from './source/internal/_path2.js';
+import pathInternalAltNth1 from './source/internal/_path_alt_nth1.js';
+import pathInternalAltNth2 from './source/internal/_path_alt_nth2.js';
+import pathInternalAltNth3 from './source/internal/_path_alt_nth3.js';
+import pathInternalAltNth4 from './source/internal/_path_alt_nth4.js';
+import pathInternalAltNth5 from './source/internal/_path_alt_nth5.js';
 
 Benchmark.options.maxTime = 1;
 const suite = new Benchmark.Suite();
@@ -51,13 +56,78 @@ suite
     pathInternal(pathAr4, obj);
     pathInternal(pathAr5, obj);
   })
-  .add('path internal alt nth', function() {
-    pathInternalAltNth(pathAr1, obj);
-    pathInternalAltNth(pathAr2, obj);
-    pathInternalAltNth(pathAr3, obj);
-    pathInternalAltNth(pathAr4, obj);
-    pathInternalAltNth(pathAr5, obj);
+  .add('path internal with ternary', function() {
+    pathInternal2(pathAr1, obj);
+    pathInternal2(pathAr2, obj);
+    pathInternal2(pathAr3, obj);
+    pathInternal2(pathAr4, obj);
+    pathInternal2(pathAr5, obj);
   })
+  .add('path internal alt nth1', function() {
+    pathInternalAltNth1(pathAr1, obj);
+    pathInternalAltNth1(pathAr2, obj);
+    pathInternalAltNth1(pathAr3, obj);
+    pathInternalAltNth1(pathAr4, obj);
+    pathInternalAltNth1(pathAr5, obj);
+  })
+  .add('path internal alt nth2', function() {
+    pathInternalAltNth2(pathAr1, obj);
+    pathInternalAltNth2(pathAr2, obj);
+    pathInternalAltNth2(pathAr3, obj);
+    pathInternalAltNth2(pathAr4, obj);
+    pathInternalAltNth2(pathAr5, obj);
+  })
+  .add('path internal alt nth3', function() {
+    pathInternalAltNth3(pathAr1, obj);
+    pathInternalAltNth3(pathAr2, obj);
+    pathInternalAltNth3(pathAr3, obj);
+    pathInternalAltNth3(pathAr4, obj);
+    pathInternalAltNth3(pathAr5, obj);
+  })
+  .add('path internal alt nth4', function() {
+    pathInternalAltNth4(pathAr1, obj);
+    pathInternalAltNth4(pathAr2, obj);
+    pathInternalAltNth4(pathAr3, obj);
+    pathInternalAltNth4(pathAr4, obj);
+    pathInternalAltNth4(pathAr5, obj);
+  })
+  .add('path internal alt nth5', function() {
+    pathInternalAltNth5(pathAr1, obj);
+    pathInternalAltNth5(pathAr2, obj);
+    pathInternalAltNth5(pathAr3, obj);
+    pathInternalAltNth5(pathAr4, obj);
+    pathInternalAltNth5(pathAr5, obj);
+  })
+  // .add('path internal 1', function() {
+  //   pathInternal(pathAr1, obj);
+  // })
+  // .add('path internal 2', function() {
+  //   pathInternal(pathAr2, obj);
+  // })
+  // .add('path internal 3', function() {
+  //   pathInternal(pathAr3, obj);
+  // })
+  // .add('path internal 4', function() {
+  //   pathInternal(pathAr4, obj);
+  // })
+  // .add('path internal 5', function() {
+  //   pathInternal(pathAr5, obj);
+  // })
+  // .add('path internal alt nth1 1', function() {
+  //   pathInternalAltNth1(pathAr1, obj);
+  // })
+  // .add('path internal alt nth1 2', function() {
+  //   pathInternalAltNth1(pathAr2, obj);
+  // })
+  // .add('path internal alt nth1 3', function() {
+  //   pathInternalAltNth1(pathAr3, obj);
+  // })
+  // .add('path internal alt nth1 4', function() {
+  //   pathInternalAltNth1(pathAr4, obj);
+  // })
+  // .add('path internal alt nth1 5', function() {
+  //   pathInternalAltNth1(pathAr5, obj);
+  // })
   .on('cycle', function(event) {
     console.log(String(event.target));
   })
