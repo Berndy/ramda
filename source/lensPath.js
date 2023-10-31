@@ -2,6 +2,7 @@ import _curry1 from './internal/_curry1.js';
 import assocPath from './assocPath.js';
 import lens from './lens.js';
 import _path from './internal/_path.js';
+import path from './path.js';
 
 
 /**
@@ -29,7 +30,11 @@ import _path from './internal/_path.js';
  *      //=> {x: [{y: -2, z: 3}, {y: 4, z: 5}]}
  */
 
-var lensPath = _curry1(function lensPath(p) {
+export var lensPath = _curry1(function lensPath(p) {
+  return lens(path(p), assocPath(p));
+});
+
+export var lensPath2 = _curry1(function lensPath(p) {
   return lens(
     (val) => _path(p, val),
     assocPath(p)
