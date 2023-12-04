@@ -22,6 +22,7 @@
       "web": "https://github.com/megawac"
     }
   ],
+  "type": "module",
   "name": "ramda",
   "description": "A practical functional library for JavaScript programmers.",
   "keywords": [
@@ -89,10 +90,10 @@
     "spec": "cross-env BABEL_ENV=cjs mocha --require @babel/register --reporter spec",
     "test": "npm-run-all --parallel spec lint"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.7.4",
     "@babel/register": "^7.4.4",
     "@babel/types": "^7.4.4",

@@ -1,6 +1,7 @@
 import Benchmark from 'benchmark';
 import pathOld from './source/path_old.js';
 import pathNew from './source/path.js';
+import prop from './source/prop.js';
 import pathInternal from './source/internal/_path.js';
 import pathInternal2 from './source/internal/_path2.js';
 import pathInternalAltNth1 from './source/internal/_path_alt_nth1.js';
@@ -42,12 +43,33 @@ suite
     pathOld(pathAr4, obj);
     pathOld(pathAr5, obj);
   })
-  .add('path new     ', function() {
+  .add('path arr     ', function() {
     pathNew(pathAr1, obj);
     pathNew(pathAr2, obj);
     pathNew(pathAr3, obj);
     pathNew(pathAr4, obj);
     pathNew(pathAr5, obj);
+  })
+  .add('prop arr    ', function() {
+    prop(pathAr1, obj);
+    prop(pathAr2, obj);
+    prop(pathAr3, obj);
+    prop(pathAr4, obj);
+    prop(pathAr5, obj);
+  })
+  .add('path str     ', function() {
+    pathNew(['a'], obj);
+    pathNew(['i'], obj);
+    pathNew(['j'], obj);
+    pathNew(['b'], obj);
+    pathNew(['c'], obj);
+  })
+  .add('prop str    ', function() {
+    prop('a', obj);
+    prop('i', obj);
+    prop('j', obj);
+    prop('b', obj);
+    prop('c', obj);
   })
   .add('path internal', function() {
     pathInternal(pathAr1, obj);
