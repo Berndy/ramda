@@ -28,14 +28,14 @@ import isNil from './isNil.js';
  *      // Any missing or non-object keys in path will be overridden
  *      R.assocPath(['a', 'b', 'c'], 42, {a: 5}); //=> {a: {b: {c: 42}}}
  */
-var assocPath = _curry3(function assocPath(path, val, obj) {
-  if (path.length === 0) {
+var assocPath = _curry3(function assocPath(pathAr, val, obj) {
+  if (pathAr.length === 0) {
     return val;
   }
-  var idx = path[0];
-  if (path.length > 1) {
-    var nextObj = (!isNil(obj) && _has(idx, obj) && typeof obj[idx] === 'object') ? obj[idx] : _isInteger(path[1]) ? [] : {};
-    val = assocPath(Array.prototype.slice.call(path, 1), val, nextObj);
+  var idx = pathAr[0];
+  if (pathAr.length > 1) {
+    var nextObj = (!isNil(obj) && _has(idx, obj) && typeof obj[idx] === 'object') ? obj[idx] : _isInteger(pathAr[1]) ? [] : {};
+    val = assocPath(Array.prototype.slice.call(pathAr, 1), val, nextObj);
   }
   return _assoc(idx, val, obj);
 });

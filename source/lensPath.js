@@ -29,10 +29,10 @@ import _path from './internal/_path.js';
  *      //=> {x: [{y: -2, z: 3}, {y: 4, z: 5}]}
  */
 
-var lensPath = _curry1(function lensPath(p) {
+var lensPath = _curry1(function lensPath(pathAr) {
   return lens(
-    function(val) { return _path(p, val);},
-    assocPath(p)
+    function(val) { return _path(pathAr, val);},
+    assocPath(pathAr)
   );
 });
 export default lensPath;

@@ -13,7 +13,7 @@ import _path from './internal/_path.js';
  * @typedefn Idx = String | Int | Symbol
  * @sig (a -> Boolean) -> [Idx] -> {a} -> Boolean
  * @param {Function} pred
- * @param {Array} propPath
+ * @param {Array} path
  * @param {*} obj
  * @return {Boolean}
  * @see R.propSatisfies, R.path
@@ -22,7 +22,7 @@ import _path from './internal/_path.js';
  *      R.pathSatisfies(y => y > 0, ['x', 'y'], {x: {y: 2}}); //=> true
  *      R.pathSatisfies(R.is(Object), [], {x: {y: 2}}); //=> true
  */
-var pathSatisfies = _curry3(function pathSatisfies(pred, propPath, obj) {
-  return pred(_path(propPath, obj));
+var pathSatisfies = _curry3(function pathSatisfies(pred, pathAr, obj) {
+  return pred(_path(pathAr, obj));
 });
 export default pathSatisfies;

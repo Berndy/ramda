@@ -13,8 +13,8 @@ import defaultTo from './defaultTo.js';
  * @category Object
  * @typedefn Idx = String | Int | Symbol
  * @sig a -> [Idx] -> {a} -> a
- * @param {*} d The default value.
- * @param {Array} p The path to use.
+ * @param {*} or The default value.
+ * @param {Array} path The path to use.
  * @param {Object} obj The object to retrieve the nested property from.
  * @return {*} The data at `path` of the supplied object or the default value.
  * @example
@@ -22,7 +22,7 @@ import defaultTo from './defaultTo.js';
  *      R.pathOr('N/A', ['a', 'b'], {a: {b: 2}}); //=> 2
  *      R.pathOr('N/A', ['a', 'b'], {c: {b: 2}}); //=> "N/A"
  */
-var pathOr = _curry3(function pathOr(d, p, obj) {
-  return defaultTo(d, _path(p, obj));
+var pathOr = _curry3(function pathOr(or, pathAr, obj) {
+  return defaultTo(or, _path(pathAr, obj));
 });
 export default pathOr;
