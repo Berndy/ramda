@@ -11,8 +11,8 @@ import prop from './prop.js';
  * @since v0.1.0
  * @category Object
  * @sig [k] -> {k: v} -> [v]
- * @param {Array} ps The property names to fetch
- * @param {Object} obj The object to query
+ * @param {Array} keys The specified object properties keys.
+ * @param {Object} obj The object to query.
  * @return {Array} The corresponding values or partially applied function.
  * @see R.prop, R.pluck, R.project
  * @example
@@ -23,9 +23,9 @@ import prop from './prop.js';
  *      const fullName = R.compose(R.join(' '), R.props(['first', 'last']));
  *      fullName({last: 'Bullet-Tooth', age: 33, first: 'Tony'}); //=> 'Tony Bullet-Tooth'
  */
-var props = _curry2(function props(ps, obj) {
-  return  ps.map(function(p) {
-    return prop(p, obj);
+var props = _curry2(function props(keys, obj) {
+  return  keys.map(function(key) {
+    return prop(key, obj);
   });
 });
 export default props;

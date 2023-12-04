@@ -13,9 +13,10 @@ import equals from './equals.js';
  * @memberOf R
  * @since v0.1.0
  * @category Relation
- * @sig a -> String -> Object -> Boolean
+ * @typedefn Idx = String | Int | Symbol
+ * @sig a -> Idx -> Object -> Boolean
  * @param {*} val The value to compare the property with
- * @param {String} name the specified object property's key
+ * @param {String|Number} key The specified object property's key.
  * @param {*} obj The object to check the property in
  * @return {Boolean} `true` if the value equals the specified object property,
  *         `false` otherwise.
@@ -30,7 +31,7 @@ import equals from './equals.js';
  *      const hasBrownHair = R.propEq('brown', 'hair');
  *      R.filter(hasBrownHair, kids); //=> [fred, rusty]
  */
-var propEq = _curry3(function propEq(val, name, obj) {
-  return equals(val, prop(name, obj));
+var propEq = _curry3(function propEq(val, key, obj) {
+  return equals(val, prop(key, obj));
 });
 export default propEq;

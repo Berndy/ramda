@@ -11,10 +11,11 @@ import is from './is.js';
  * @memberOf R
  * @since v0.16.0
  * @category Type
- * @sig Type -> String -> Object -> Boolean
+ * @typedefn Idx = String | Int | Symbol
+ * @sig Type -> Idx -> Object -> Boolean
  * @param {Function} type
- * @param {String} name
- * @param {*} obj
+ * @param {String|Number} key The specified object property's key.
+ * @param {*} obj The object to query.
  * @return {Boolean}
  * @see R.is, R.propSatisfies
  * @example
@@ -23,7 +24,7 @@ import is from './is.js';
  *      R.propIs(Number, 'x', {x: 'foo'});    //=> false
  *      R.propIs(Number, 'x', {});            //=> false
  */
-var propIs = _curry3(function propIs(type, name, obj) {
-  return is(type, prop(name, obj));
+var propIs = _curry3(function propIs(type, key, obj) {
+  return is(type, prop(key, obj));
 });
 export default propIs;

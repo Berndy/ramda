@@ -14,8 +14,8 @@ import prop from './prop.js';
  * @since v0.6.0
  * @category Object
  * @sig a -> String -> Object -> a
- * @param {*} val The default value.
- * @param {String} p The name of the property to return.
+ * @param {*} or The default value.
+ * @param {String} key The specified object property's key.
  * @param {Object} obj The object to query.
  * @return {*} The value of given property of the supplied object or the default value.
  * @example
@@ -30,7 +30,7 @@ import prop from './prop.js';
  *      favorite(alice);  //=> undefined
  *      favoriteWithDefault(alice);  //=> 'Ramda'
  */
-var propOr = _curry3(function propOr(val, p, obj) {
-  return defaultTo(val, prop(p, obj));
+var propOr = _curry3(function propOr(or, key, obj) {
+  return defaultTo(or, prop(key, obj));
 });
 export default propOr;

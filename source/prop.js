@@ -13,8 +13,8 @@ import _nth from './internal/_nth.js';
  * @category Object
  * @typedefn Idx = String | Int | Symbol
  * @sig Idx -> {s: a} -> a | Undefined
- * @param {String|Number} p The property name or array index
- * @param {Object} obj The object to query
+ * @param {String|Number} key The specified object property's key.
+ * @param {Object} obj The object to query.
  * @return {*} The value at `obj.p`.
  * @see R.path, R.props, R.pluck, R.project, R.nth
  * @example
@@ -25,10 +25,10 @@ import _nth from './internal/_nth.js';
  *      R.compose(R.inc, R.prop('x'))({ x: 3 }) //=> 4
  */
 
-var prop = _curry2(function prop(p, obj) {
+var prop = _curry2(function prop(key, obj) {
   if (obj == null) {
     return;
   }
-  return _isInteger(p) ? _nth(p, obj) : obj[p];
+  return _isInteger(key) ? _nth(key, obj) : obj[key];
 });
 export default prop;
